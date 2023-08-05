@@ -48,7 +48,7 @@ export type Payment = {
   email: string;
 };
 
-export const DataTableDemo = () => {
+const Users = () => {
   const [data, setData] = useState<Payment[]>([]);
 
   useEffect(() => {
@@ -130,20 +130,10 @@ export const DataTableDemo = () => {
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
               <DropdownMenuLabel>Actions</DropdownMenuLabel>
-              <DropdownMenuItem
-                onClick={() => {
-                  navigator.clipboard.writeText(payment.id);
-                  // Optional: Show a notification or alert indicating the ID is copied
-                }}
-              >
-                Copy payment ID
-              </DropdownMenuItem>
-              <DropdownMenuSeparator />
-              {/* Use the Link component for client-side navigation */}
+              
               <Link href={userPageLink}>
-                <DropdownMenuItem>View customer</DropdownMenuItem>
+                <DropdownMenuItem>View Profile</DropdownMenuItem>
               </Link>
-              <DropdownMenuItem>View payment details</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         );
@@ -283,4 +273,4 @@ export const DataTableDemo = () => {
   );
 };
 
-export default DataTableDemo;
+export default Users
